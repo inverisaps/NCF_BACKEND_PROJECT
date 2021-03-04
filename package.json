@@ -1,0 +1,23 @@
+{
+  "name": "ncf_backend_project",
+  "version": "1.0.0",
+  "description": "Es un proyecto desarrollado para la creación de comprobantes fiscales, esta es la parte del backend del proyecto.",
+  "main": "index.js",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://inverisaps:INVERISAP8092459600@github.com/inverisaps/NCF_BACKEND_PROJECT.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/inverisaps/NCF_BACKEND_PROJECT/issues"
+  },
+  "homepage": "https://github.com/inverisaps/NCF_BACKEND_PROJECT#readme"
+}
