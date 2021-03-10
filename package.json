@@ -4,7 +4,8 @@
   "description": "Es un proyecto desarrollado para la creación de comprobantes fiscales, esta es la parte del backend del proyecto.",
   "main": "index.js",
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "mysql": "^2.18.1"
   },
   "devDependencies": {
     "nodemon": "^2.0.7"
