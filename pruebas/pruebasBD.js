@@ -38,8 +38,8 @@ pool.query(`select * from rnc_data where RNC = 130780498`, (error, result) => {
   if (error) {
     console.log(error)
   }
-  console.log(result);
+  
   let fin = new Date();
-  console.log(fin - inicio);
+ 
 });
 
