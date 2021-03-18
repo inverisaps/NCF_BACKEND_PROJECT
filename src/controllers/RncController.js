@@ -1,8 +1,9 @@
 const fs = require("fs");
+const utf8 = require('utf8');
   function findLine(rnc,fn) {
     let MAX_SENTENCE_LENGTH = 207;
     var response = "";
-    fs.readFile("./DGII_RNC copy.TXT", "utf-8", function (err, data) {
+    fs.readFile("./src/assets/rows.txt", "utf-8", function (err, data) {
       let startPoint = data.search(rnc);
       let extract = data.substring(
         startPoint,
@@ -17,6 +18,7 @@ const fs = require("fs");
   
 const BuscarRNC = async (req, res) => {
     const rnc = req.params.rnc;
+    
    
     if (rnc !== null && rnc !== undefined && rnc !== "") {
      await findLine(rnc.toString(), function(resp){
@@ -26,6 +28,7 @@ const BuscarRNC = async (req, res) => {
                 datita += element + " ";
             }          
           });
+          
           res.json({
               res:"ok",
               data:datita.trim()
