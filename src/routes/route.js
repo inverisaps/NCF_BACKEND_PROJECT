@@ -20,4 +20,5 @@ router.use('/factura',FacturaRouter);
 router.use('/rnc',RNCRouter);
 router.use('/sucursales',SucursalesRouter);
 
+
 module.exports = router;
