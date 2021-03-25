@@ -2,14 +2,16 @@ const db = require("../DB/db");
 module.exports = class FacturaModel {
   async CreateFactura(data) {
     try {
-      let sql = `Call add_factura(${data.id_t_n},'${data.rnc}','${data.nombre}',${data.monto}, ${data.id_sucursal});`;
+      let sql = `Call add_factura(${data.id_t_n},'${data.rnc}','${data.nombre}',${data.monto}, ${data.id_sucursal}, ${data.id_metodo_pago});`;
       let resul = await db.query(sql);
-      if (resul[1].affectedRows == 0) {
+ 
+      if (resul[1].affectedRows > 0) {
         return resul[0];
       } else {
         return false; 
       }
     } catch (err) {
+      console.log(err);
       return err;
     }
   }

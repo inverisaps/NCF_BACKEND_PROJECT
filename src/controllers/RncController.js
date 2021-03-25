@@ -18,8 +18,6 @@ const utf8 = require('utf8');
   
 const BuscarRNC = async (req, res) => {
     const rnc = req.params.rnc;
-    
-   
     if (rnc !== null && rnc !== undefined && rnc !== "") {
      await findLine(rnc.toString(), function(resp){
          let datita = ""; 

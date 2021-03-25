@@ -1,6 +1,5 @@
 const express =  require('express');
 const cors = require('cors');
-
 const app = express();
 //settings 
 app.set("port", 8999);
