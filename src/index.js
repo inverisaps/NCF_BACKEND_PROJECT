@@ -18,7 +18,7 @@ async function goo(file, desc) {
 app.listen(app.get('port'), () => {
     console.log("server on port "+app.get('port'));
 
-    cron.schedule('0 0 * * *', () => {
+    cron.schedule('0 10 * * *', () => {
         goo("./src/assets/file.zip","./src/assets/");
       });
 });
