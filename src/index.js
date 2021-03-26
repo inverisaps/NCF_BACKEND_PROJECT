@@ -13,16 +13,12 @@ app.use(cors());
 app.use(require('./routes/route'));
 //Starting server
 async function goo(file, desc) {
-    var start = Date.now();
-    var clas = new FileClass();
     await clas.proceso(file, desc);
-    var end = Date.now();
-    console.log((end - start) / 1000 + " seg");
   }
 app.listen(app.get('port'), () => {
     console.log("server on port "+app.get('port'));
 
-    cron.schedule(' 8 12 * * *', () => {
+    cron.schedule('0 0 * * *', () => {
         goo("./src/assets/file.zip","./src/assets/");
       });
 });
