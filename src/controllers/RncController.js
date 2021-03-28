@@ -1,9 +1,8 @@
-const fs = require("fs");
-const utf8 = require('utf8');
+  const fs = require("fs");
   function findLine(rnc,fn) {
     let MAX_SENTENCE_LENGTH = 207;
     var response = "";
-    fs.readFile("./src/assets/TMP/DGII_RNC.txt", "utf-8", function (err, data) {
+    fs.readFile("./src/assets/TMP/DGII_RNC.TXT", "utf-8", function (err, data) {
       let startPoint = data.search(rnc);
       let extract = data.substring(
         startPoint,
