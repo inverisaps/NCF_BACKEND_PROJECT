@@ -1,8 +1,9 @@
 var https = require("https");
 var fs = require("fs");
 var unzipper = require("unzipper");
- 
+
 module.exports = class FileClass {
+
   async existFile(file) {
     fs.access(file, fs.constants.F_OK, (err) => {
       if (err) console.error("File no exist");
@@ -30,12 +31,10 @@ module.exports = class FileClass {
       ).then(function (resultado) {
         if (resultado) {
           fs.createReadStream(file).pipe(unzipper.Extract({ path: desc }));
-          
         } else {
           console.log("error");
         }
       });
-
     } else {
       await this.download(
         "https://www.dgii.gov.do/app/WebApps/Consultas/RNC/DGII_RNC.zip",
@@ -43,9 +42,8 @@ module.exports = class FileClass {
       ).then(function (resultado) {
         if (resultado) {
           fs.createReadStream(file).pipe(
-            unzipper.Extract({ path: "carpeta/" })
+            unzipper.Extract({ path: desc })
           );
-        
         } else {
           console.log("error");
         }
@@ -91,6 +89,4 @@ module.exports = class FileClass {
       });
     });
   }
-}
-
-
+};
