@@ -1,6 +1,8 @@
 const SucursalesModel = require("../models/SucursalesModel");
 const SModel = new SucursalesModel();
-
+const API_KEY = require("./API-KEY");
+  var api_key = new API_KEY();
+  
 const getSucuarsales = async (req, res) => {
   api_key.verificar(req, res, async (reqe, rese) => {
     let resultado = await SModel.GetSucursales();

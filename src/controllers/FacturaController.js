@@ -1,5 +1,7 @@
 const FacturaModel = require("../models/FacuturaModel");
 const FModel = new FacturaModel();
+const API_KEY = require("./API-KEY");
+var api_key = new API_KEY();
 
 const CreateFactura = async (req, res) => {
   api_key.verificar(req, res, async (reqe, rese) => {

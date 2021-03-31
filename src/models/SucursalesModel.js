@@ -1,6 +1,7 @@
 const db = require("../DB/db");
-module.exports = class SucursalesModel {
 
+module.exports = class SucursalesModel {
+  
   async GetSucursales() {
     try {
       let sql = `Call get_sucursales();`;
