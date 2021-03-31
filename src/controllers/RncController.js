@@ -1,4 +1,7 @@
 const fs = require("fs");
+const API_KEY = require("./API-KEY");
+var api_key = new API_KEY();
+
 function findLine(rnc, fn) {
   let MAX_SENTENCE_LENGTH = 207;
   var response = "";
@@ -19,37 +22,38 @@ function findLine(rnc, fn) {
 }
 
 const BuscarRNC = async (req, res) => {
-  const rnc = req.params.rnc;
-  if (rnc !== null && rnc !== undefined && rnc !== "") {
-    await findLine(rnc.toString(), function (resp) {
-      let datita = "";
-      if (resp === false) {
-        datita = "none";
-        res.json({
-          res: "ok",
-          data: datita.trim(),
-        });
-      } else {
-        resp
-          .split("|")[1]
-          .split(" ")
-          .forEach((element) => {
-            if (element !== "") {
-              datita += element + " ";
-            }
+  api_key.verificar(req, res, async (reqe, rese) => {
+    const rnc = reqe.params.rnc;
+    if (rnc !== null && rnc !== undefined && rnc !== "") {
+      await findLine(rnc.toString(), function (resp) {
+        let datita = "";
+        if (resp === false) {
+          datita = "none";
+          rese.json({
+            res: "ok",
+            data: datita.trim(),
           });
-
-        res.json({
-          res: "ok",
-          data: datita.trim(),
-        });
-      }
-    });
-  } else {
-    res.json({
-      res: "no data",
-    });
-  }
+        } else {
+          resp
+            .split("|")[1]
+            .split(" ")
+            .forEach((element) => {
+              if (element !== "") {
+                datita += element + " ";
+              }
+            });
+          rese.json({
+            res: "ok",
+            data: datita.trim(),
+          });
+        }
+      });
+    } else {
+      rese.json({
+        res: "no data",
+      });
+    }
+  });
 };
 
 module.exports = { BuscarRNC };

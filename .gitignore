@@ -1,2 +1,3 @@
 /node_modules
 /src/DGII_RNC copy.TXT
+.env.development

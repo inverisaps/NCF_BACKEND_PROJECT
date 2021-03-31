@@ -1,9 +1,14 @@
+const NODE_ENV = process.env.NODE_ENV || 'development';
+require("dotenv").config({
+  path: `.env.${NODE_ENV}`
+});
+
 module.exports = {
     database: {
         connectionLimit: 20,
-        host: '148.103.232.11',
-        user: 'remote',
-        password: 'v123456',
-        database: 'ncf_db'
+        host: process.env.HOST,
+        user: process.env.USER_DB,
+        password: process.env.PASS_DB,
+        database: process.env.DB_NAME
     }
 };
