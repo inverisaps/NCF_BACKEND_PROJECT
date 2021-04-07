@@ -1,7 +1,6 @@
 const fs = require("fs");
 const API_KEY = require("./API-KEY");
 var api_key = new API_KEY();
-
 function findLine(rnc, fn) {
   let MAX_SENTENCE_LENGTH = 207;
   var response = "";
