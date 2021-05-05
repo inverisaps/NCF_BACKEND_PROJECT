@@ -4,20 +4,17 @@ const API_KEY = require("./API-KEY");
   var api_key = new API_KEY();
   
 const getSucuarsales = async (req, res) => {
-
-  api_key.verificar(req, res, async (reqe, rese) => {
     let resultado = await SModel.GetSucursales();
     if (resultado) {
-      rese.json({
+      res.json({
         res: "ok",
         data: resultado,
       });
     } else {
-      rese.json({
+      res.json({
         res: "false",
       });
     }
-  });
 };
 
 const getSucuarsal = async (req, res) => {
@@ -26,7 +23,6 @@ const getSucuarsal = async (req, res) => {
     console.log(id);
     if (id != null || id != "" || id != 0) {
       let resultado = await SModel.GetSucursal(id);
-      console.log(resultado);
       if (resultado != false && resultado != null && resultado != "ocupado") {
         rese.json({
           res: "ok",
