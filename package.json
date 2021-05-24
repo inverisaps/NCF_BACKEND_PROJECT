@@ -1,14 +1,14 @@
 {
   "name": "ncf_backend_project",
   "version": "1.0.0",
-  "description": "Es un proyecto desarrollado para la creación de comprobantes fiscales, esta es la parte del backend del proyecto.",
+  "description": "Es un proyecto desarrollado para la creación de comprobantes fiscales. Esta es la parte del backend del proyecto.",
   "main": "index.js",
   "dependencies": {
+    "axios": "^0.21.1",
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "mysql": "^2.18.1",
-    "node-cron": "^3.0.0",
     "unzipper": "^0.10.11",
     "utf8": "^3.0.0"
   },
