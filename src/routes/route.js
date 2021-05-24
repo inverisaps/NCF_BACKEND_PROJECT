@@ -1,4 +1,4 @@
-//clave de seguridad hash //C9A1E9820472834883A7C8CA67EF62B66047B80DA652818819BB039830CD3E94//
+
 
 const { Router } = require("express");
 const router = Router();
