@@ -1,4 +1,5 @@
 -- phpMyAdmin SQL Dump
+-- mysqldump -u remote -pv123456 GLOBAL_DATABASE_CALIPSO > sqltest.sql   --code script
 -- version 5.0.4
 -- https://www.phpmyadmin.net/
 --
